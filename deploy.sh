@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -13,3 +16,11 @@ echo \
 sudo apt-get update -y
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+
+cd /home/ubuntu/Assignment_node_app
+git pull origin main
+docker build -t hello-node-image .
+docker kill my-node-app
+docker system prune -f
+docker run --name my-node-app -d -p 3000:3000 hello-node-image
