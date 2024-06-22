@@ -2,10 +2,25 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/Assignment_Node_App
+    destination: /home/ubuntu/Assignment_node_app
 hooks:
-  RunOnDocker:
-    - location: scripts/deploy_newcode.sh
+  BeforeInstall:
+    - location: scripts/before_install.sh
       timeout: 300
       runas: root
-
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_container.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_container.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
+      runas: root
