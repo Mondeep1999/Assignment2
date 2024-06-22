@@ -1,8 +1,7 @@
 #!/bin/bash
 
 
-cd ~/Assignment2
-git pull origin main
+cd /home/ubuntu/Assignment_Node_App
 docker build -t hello-node-image .
 docker kill my-node-app
 docker system prune
