@@ -7,5 +7,5 @@ hooks:
   RunOnDocker:
     - location: scripts/deploy_newcode.sh
       timeout: 300
-      runas: ubuntu
+      runas: root
 
