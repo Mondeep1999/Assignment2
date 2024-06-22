@@ -7,20 +7,20 @@ hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   AfterInstall:
     - location: scripts/after_install.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   ApplicationStop:
     - location: scripts/stop_container.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   ApplicationStart:
     - location: scripts/start_container.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   ValidateService:
     - location: scripts/validate_service.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
