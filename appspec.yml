@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/Assignment2
+    destination: /home/ubuntu/Assignment_Node_App
 hooks:
   RunOnDocker:
     - location: scripts/deploy_newcode.sh
