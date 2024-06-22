@@ -1,4 +1,3 @@
 #!/bin/bash
-docker kill my-node-app || true
-docker rm my-node-app || true
+docker kill my-node-app
 docker system prune -f
