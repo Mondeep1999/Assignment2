@@ -22,5 +22,6 @@ cd /home/ubuntu/Assignment_node_app
 git pull origin main
 docker build -t hello-node-image .
 docker kill my-node-app
-docker system prune -f
+docker system prune -a -f
+docker build -t hello-node-image .
 docker run --name my-node-app -d -p 3000:3000 hello-node-image
