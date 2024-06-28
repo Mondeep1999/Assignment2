@@ -15,10 +15,11 @@ kubectl get pods --all-namespaces | grep "<name>"
 *Retrieve MySQL Root Password*
 
 Extract the MySQL root password (<ROOT_PASSWORD>) from the pod's secret:
-bash
+```sh
 Copy code
 echo "<pod>" | grep -o '.*mysql'
 kubectl get secret "<secret_name>" -n "<namespace>" -o yaml | grep "mysql-root-password:" | awk -F ': ' '{print $2}' | base64 -d
+```
 
 *Dump the database into a sample.sql file using the mysqldump command within the MySQL pod:*
 
